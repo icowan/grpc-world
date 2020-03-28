@@ -1,0 +1,12 @@
+version: '3'
+services:
+  grpc-server:
+    image: dudulu/grpc-server:latest
+    command: /go/bin/grpc-world -http-addr :8080 -grpc-addr :8081
+    restart: always
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    build:
+      context: .
+      dockerfile: Dockerfile
