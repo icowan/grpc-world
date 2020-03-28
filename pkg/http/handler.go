@@ -34,7 +34,7 @@ func MakeHTTPHandler(eps ep.Endpoints, opts ...kithttp.ServerOption) http.Handle
 		decodePutRequest,
 		encode.JsonResponse,
 		opts...,
-	)).Methods(http.MethodPost)
+	)).Methods(http.MethodPut)
 
 	return r
 }
