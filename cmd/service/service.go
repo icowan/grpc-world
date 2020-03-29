@@ -71,6 +71,7 @@ func Run() {
 	g := &group.Group{}
 	initHttpHandler(eps, g)
 	initGRPCHandler(eps, g)
+	initCancelInterrupt(g)
 
 	_ = level.Error(logger).Log("exit", g.Run())
 }
